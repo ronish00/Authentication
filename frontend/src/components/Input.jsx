@@ -1,8 +1,4 @@
-import React, { useState } from "react";
-
-const Input = ({ placeholder, type, name, label }) => {
-  const [value, setValue] = useState("");
-
+const Input = ({ placeholder, type, name, label, value, onChange }) => {
 
   return (
     <div className="flex flex-col gap-3">
@@ -15,7 +11,7 @@ const Input = ({ placeholder, type, name, label }) => {
         className="bg-gray-800 p-3 placeholder:text-gray-400 rounded text-white"
         name={name}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={onChange}
       />
     </div>
   );
