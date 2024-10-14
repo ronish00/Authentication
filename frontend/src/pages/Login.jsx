@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Input from "../components/Input";
 import bg from "../images/bg.jpg";
 import { Link, useNavigate } from "react-router-dom";
@@ -18,11 +18,9 @@ const Login = () => {
       const res = await axios.post("http://localhost:8000/api/v1/user/login", {
         email,
         password
-      })
+      }, {withCredentials: true})
 
       navigate("/dashboard");
-
-      console.log(res)
 
     } catch (error) {
       console.log(error)
